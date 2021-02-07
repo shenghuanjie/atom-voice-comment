@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle my-atom-package",
-        "command": "my-atom-package:toggle"
+        "label": "Toggle atom-voice-comment",
+        "command": "atom-voice-comment:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "my-atom-package",
+          "label": "atom-voice-comment",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "my-atom-package:toggle"
+              "command": "atom-voice-comment:toggle"
             }
           ]
         }

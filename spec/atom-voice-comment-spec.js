@@ -1,43 +1,43 @@
 'use babel';
 
-import MyAtomPackage from '../lib/my-atom-package';
+import AtomVoiceComment from '../lib/atom-voice-comment';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe('MyAtomPackage', () => {
+describe('AtomVoiceComment', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('my-atom-package');
+    activationPromise = atom.packages.activatePackage('atom-voice-comment');
   });
 
-  describe('when the my-atom-package:toggle event is triggered', () => {
+  describe('when the atom-voice-comment:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.my-atom-package')).not.toExist();
+      expect(workspaceElement.querySelector('.atom-voice-comment')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'my-atom-package:toggle');
+      atom.commands.dispatch(workspaceElement, 'atom-voice-comment:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.my-atom-package')).toExist();
+        expect(workspaceElement.querySelector('.atom-voice-comment')).toExist();
 
-        let myAtomPackageElement = workspaceElement.querySelector('.my-atom-package');
+        let myAtomPackageElement = workspaceElement.querySelector('.atom-voice-comment');
         expect(myAtomPackageElement).toExist();
 
         let myAtomPackagePanel = atom.workspace.panelForItem(myAtomPackageElement);
         expect(myAtomPackagePanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'my-atom-package:toggle');
+        atom.commands.dispatch(workspaceElement, 'atom-voice-comment:toggle');
         expect(myAtomPackagePanel.isVisible()).toBe(false);
       });
     });
@@ -51,11 +51,11 @@ describe('MyAtomPackage', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.my-atom-package')).not.toExist();
+      expect(workspaceElement.querySelector('.atom-voice-comment')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'my-atom-package:toggle');
+      atom.commands.dispatch(workspaceElement, 'atom-voice-comment:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,9 +63,9 @@ describe('MyAtomPackage', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let myAtomPackageElement = workspaceElement.querySelector('.my-atom-package');
+        let myAtomPackageElement = workspaceElement.querySelector('.atom-voice-comment');
         expect(myAtomPackageElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'my-atom-package:toggle');
+        atom.commands.dispatch(workspaceElement, 'atom-voice-comment:toggle');
         expect(myAtomPackageElement).not.toBeVisible();
       });
     });

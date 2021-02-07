@@ -1,18 +1,25 @@
 {
-  "name": "my-atom-package",
-  "main": "./lib/my-atom-package",
+  "name": "atom-voice-comment",
+  "main": "./lib/atom-voice-comment",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "my-atom-package:toggle"
+    "atom-workspace": "atom-voice-comment:toggle"
   },
-  "repository": "https://github.com/atom/my-atom-package",
+  "repository": "https://github.com/shenghuanjie/atom-voice-comment",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+  },
+  "config": {
+  "gitlabUrl": {
+    "description": "If you rely on a private Gitlab server, please type your base URI here (default: https://gitlab.com).",
+    "type": "string",
+    "default": "https://gitlab.com"
   }
+}
 }
