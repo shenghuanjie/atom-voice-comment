@@ -1,4 +1,4 @@
-# my-atom-package package
+# atom-voice-comment
 
 A short description of your package.
 
